@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endpoint</title>
+</head>
+<body>
+    <h1>Welcome to My Endpoint!</h1>
+
+    {% if post_message %}
+        <div style="color: green; font-weight: bold;">
+            {{ post_message }}
+        </div>
+    {% endif %}
+
+    <h2>Send a POST request:</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="data_input">Enter some data:</label>
+        <input type="text" name="data_input" id="data_input">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
